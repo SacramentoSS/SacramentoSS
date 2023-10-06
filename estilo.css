@@ -1,0 +1,350 @@
+bpdy{
+    margin: 0;
+    padding: 0;
+    color: black;
+    }
+
+    .cabecalho-conteudo{
+        height: 100vh;
+        width: 100vw;
+        background-color: aqua;
+        background-image: url(fundo.jpg);        
+        background-repeat: no-repeat;
+        background-position: right ;        
+        background-size: contain;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        box-sizing: border-box;
+        padding: 0 100px;
+        position: relative;
+    }
+
+    h1{  
+        font-size: 50px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+     }
+
+        
+h2{
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
+    
+    .social-media{
+        margin-top: 1rem;
+        display: flex;
+    }
+
+    .social-media a {
+        text-decoration: none;
+        color: black;
+        padding: 1rem 4rem;
+        border: 1px solid black;
+        min-width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 3s ease-in-out;
+    }
+
+    a:hover {
+        background-color: white;
+      }
+
+    .checkbox-conteudo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .checkbox{
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 9999;
+        transition: 400ms ease-in-out 0s;
+    }
+    .checkbox .box{
+        width: 50px;
+        height: 2px;
+        background-color: black;
+        position: absolute;
+        border-radius: 4px;
+        transition: 0.5s ease-in-out;
+        }
+
+    .checkbox .box:nth-child(1){
+        top: 26px;
+        transform: rotate(0);
+        }
+
+    .checkbox .box:nth-child(2){
+        top: 46px;
+        transform: rotate(0);
+        }
+
+        
+    .checkbox .box:nth-child(3){
+        top: 66px;
+        transform: rotate(0);
+        }
+
+    #alternar{
+        display: none;
+        }
+
+    .menu{
+        position: absolute;
+        top: 28px;
+        right: 30px;
+        background-color: transparent;
+        height: 40px;
+        width: 10px;
+        border-radius: 50px;
+        box-shadow: 0px 0px 0px 0px white;
+        z-index: -1;
+        transition: 400ms ease-in-out 0;
+        }
+
+    .menu-item{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        transition: 400ms ease-in-out 0;
+        }
+
+      
+    .menu-item ul{
+        list-style-type: none;
+        }
+
+    .menu-item ul li a {
+        margin: 10px;
+        color: black;
+        text-decoration: none;
+        letter-spacing: 4px;
+        font-size: 40px;
+        }
+
+
+    #alternar:checked + .checkbox .box:nth-child(1){
+        transform: rotate(45deg);
+        top: 47px;
+        }
+
+
+    #alternar:checked + .checkbox .box:nth-child(2){
+        transform: translate(-100px);
+        width: 30px;
+        visibility: hidden;
+        opacity: 0;
+        }
+
+    #alternar:checked + .checkbox .box:nth-child(3){
+        transform: rotate(-45deg);
+        top: 48px;
+        }
+
+    #alternar:checked + .checkbox{
+        background-color: white;
+        }
+
+    #alternar:checked ~ .menu{
+        box-shadow: 0px 0px 0px 100vmax white;
+        z-index: 1;
+        }
+
+    #alternar:checked ~ .menu-item{
+        visibility: visible;
+        opacity: 1;
+        }
+    
+    .conteudo{
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 3rem 0;
+        }
+
+    .bloco-conteudo{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 90%;
+         }
+
+    .bloco{
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        margin: 3rem 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: aquamarine;
+        background-image: url();
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: grayscale(0.5);
+        color: #1E1E2A;
+        cursor: pointer;
+        transition: 0.5 ease-in-out;
+        }
+    
+    .bloco-texto{
+        width: 40%;
+        letter-spacing: 1px;
+        color: rgb(109, 109, 109);
+        }
+
+    .bloco-02{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        }
+
+    .bloco-02::before{
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        display: block;
+        border: 1px solid white;
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+        }
+
+    .bloco-02 p{
+        font-size: 0;
+        visibility: visible;
+        opacity: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: 0.5 ease-in-out;
+        }
+
+    .bloco:hover{
+        filter: unset;
+        }
+
+    .bloco:hover > .bloco-02::before{
+        height: 200px;
+        width: 200px;
+        opacity: 1;
+        }
+
+    .bloco:hover > .bloco-02 p{
+        opacity: 1;
+        visibility: visible;
+        font-size: 14px;
+        }
+
+    .form {    
+        max-width: 32rem;
+        font-size: 1.0rem;
+        }
+  
+    .form label,
+    .form input,
+    .form textarea,
+    .form button {
+        display: block;
+        width: 100%;
+        }
+
+    .form label {
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        }
+  
+    .form input,
+    .form textarea {
+        font: inherit;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        border: solid 1px;  
+        border-radius: 8px; 
+        }
+
+    .form textarea {
+        min-height: 13rem;
+        resize: vertical;
+        }
+
+    .form input:hover,
+    .form input:focus,
+    .form textarea:hover,
+    .form textarea:focus {
+        outline: none;
+        border-color: #09d;
+        box-shadow: 0 0 0 3px #4dc8ff;
+        }
+
+    .form button {    
+        display: block;    
+        padding: 1rem; 
+        box-sizing: content-box;  
+        background: #0072c4;
+        color: #fff;
+        font: inherit;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+        }
+
+    .form button:hover,
+    .form button:focus {
+        outline: none;
+        background: #09d;
+    
+        }
+
+    footer{
+        width: 100%;
+        height: 100px;
+        padding-bottom: 5%;
+        padding-top: 1%;
+        margin-top: 1%;
+        box-sizing: content-box;
+        background-color: aquamarine;    
+        align-items: center;
+        justify-content: center;
+        color: black;
+        clear: both;
+        text-align: center;    
+
+}
+
+@media screen and (max-width: 768px) {
+
+       
+   
+
+
+}
